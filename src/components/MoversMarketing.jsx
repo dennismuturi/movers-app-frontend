@@ -4,17 +4,17 @@ export default function MoversMarketing() {
     }
     return (
 
-        <div class="py-20 bg-black" style={gradientStyle}
+        <div className="py-20 bg-black" style={gradientStyle}
         >
-        <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-2 text-white">
+        <div className="container mx-auto px-6">
+        <h2 className="text-4xl font-bold mb-2 text-white">
            Movers App for Companies
         </h2>
-        <h3 class="text-2xl mb-8 text-gray-200">
-         Improve your business, Get more Customers
+        <h3 className="text-2xl mb-8 text-gray-200">
+         Get more customers, Improve your business
         </h3>
 
-        <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+        <button className="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
           Sign Up
         </button>
       </div>

@@ -13,7 +13,7 @@ export default function CustomerMarketing (){
           </div>
           <div  className="w-full md:w-1/2">
             <h4  className="text-xl text-gray-800 font-bold mb-3">Committed</h4>
-            <p  className="text-gray-600 mb-8">
+            <p  className="text-gray-600 mb-8 text-2xl">
                Our Movers are there to ensure you safely get to your new home without 
               any problems.<br/>
               Guided by our principle of keeping you first, we are committed to ensure you get 
@@ -32,9 +32,11 @@ export default function CustomerMarketing (){
           </div>
           <div  className="w-full md:w-1/2">
             <h4  className="text-xl text-gray-800 font-bold mb-3"> Support</h4>
-            <p  className="text-gray-600 mb-8">
+            <p  className="text-gray-600 mb-8 text-2xl">
                We are there to assit you in finding the best people, transportation to move
                without 
+               <br/><br/> 
+              <a href="#">Learn More</a> 
                 
                 </p>
           </div>

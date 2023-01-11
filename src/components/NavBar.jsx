@@ -1,7 +1,7 @@
 export default function NavBar(){
     return (
 <>
-<div className="bg-black text-white flex justify-between items-center">
+<div className="bg-black text-white flex justify-between items-center p-2">
     <div className="flex p-3 ">
         <a data-baseweb="link" 
         href="https://www.moversapp.com/" 
