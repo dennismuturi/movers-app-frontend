@@ -1,7 +1,8 @@
 export default function NavBar(){
     return (
 <>
-<div className="bg-black text-white flex justify-between items-center p-2">
+<div className="bg-black text-white">
+<div className="container mx-auto px-6 py-2 flex justify-between items-center">
     <div className="flex p-3 ">
         <a data-baseweb="link" 
         href="https://www.moversapp.com/" 
@@ -19,7 +20,7 @@ export default function NavBar(){
             <button className="text-black bg-white rounded-lg py-1 px-2">Sign up</button>
             </div>
             </div>
-
+        </div>
 
 </>
     );
