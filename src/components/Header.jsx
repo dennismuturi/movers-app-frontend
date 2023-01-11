@@ -1,13 +1,15 @@
+import Tabs from "./Tabs";
 export default function Header(){
     return (
         <div className="bg-black text-white flex">
-        <div className="w-1/2 p-10">
+        <div className=" w-1/2 p-10">
           <h1 className="text-5xl tracking-tight font-semibold">Let's move you<br/> safely</h1>
         <h1 className="mt-5 text-gray-200">
           Find the best movers, to get you and
           your belongings to your new destination minutes.   
         </h1>
       <button className="bg-gray-300 text-gray-900 py-2 px-5 mt-5">Get started </button>
+      <Tabs/>
         </div>
         <div className="w-1/2">
           <img 
