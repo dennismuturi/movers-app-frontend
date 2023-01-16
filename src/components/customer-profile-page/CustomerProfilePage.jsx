@@ -5,7 +5,6 @@ const CustomerProfilePage = () => {
   return (
     <>
       <Navbar />
-      <h2>Customer Profile Page Component</h2>
     </>
   );
 };
