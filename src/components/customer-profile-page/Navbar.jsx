@@ -5,11 +5,16 @@ const Navbar = () => {
   const [active, setActive] = useState("nav_menu");
   const [toggleIcon, setToggleIcon] = useState("nav_toggler");
 
-  // Nav Toggle Functionality
   const navToggle = () => {
+    // Nav Toggle Functionality
     active === "nav_menu"
       ? setActive("nav_menu nav_active")
       : setActive("nav_menu");
+
+    // TogglerIcon Animation functionality
+    toggleIcon === "nav_toggler"
+      ? setToggleIcon("nav_toggler toggle")
+      : setToggleIcon("nav_toggler");
   };
 
   return (
