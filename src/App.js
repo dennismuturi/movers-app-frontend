@@ -1,12 +1,13 @@
 import { HomePage } from "./components";
-import NavBar from "./components/NavBar";
+
 import { Routes, Route} from 'react-router-dom';
+import MoverPage from "./components/MoverPage";
 function App() {
   return (
     <>
-  <NavBar/>
   <Routes>
   <Route path="/" element={<HomePage/>}/>
+  <Route path="/mover/:id" element={<MoverPage/>}/>
   </Routes>
    </>
   );
