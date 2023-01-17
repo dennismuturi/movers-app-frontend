@@ -1,4 +1,5 @@
 import DropDownMenu from "./DropDownMenu";
+import { Link } from "react-router-dom";
 
 export default function NavBar({
     logoTitle,
@@ -21,14 +22,13 @@ export default function NavBar({
 <div className="bg-black text-white">
 <div className="container mx-auto px-6 py-2 flex justify-between items-center">
     <div className="flex p-3 ">
-        <a data-baseweb="link" 
-        href="https://www.moversapp.com/" 
+        <Link  to="/" data-baseweb="link"  
         target="_self" 
         aria-label="Go to moversapp.com" 
         data-tracking-name=""
         class=" mr-4 cc cd ce cf cg ch ci cj bn b5 ck cl cm cn co cp cq cr cs ct cu cv cw bt bf cb cx cy cz d0">
             {logoTitle}
-            </a>
+            </Link>
         <h1 className="mr-4 text-sm">{rightMenuItem1}</h1>
         <h1 className="mr-4 text-sm">{rightMenuItem2}</h1>
         <h1 className="mr-4 text-sm">{rightMenuItem3}</h1>
