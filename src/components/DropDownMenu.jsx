@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function DropDownMenu({
     dropdownmenu1,
     dropdownmenu2,
     dropdownmenu3,
-    dropdownmenu4
+    dropdownmenu4,
+    dropmenu1Link,
+    dropmenu2Link,
+    dropmenu3Link,
+    dropmenu4Link
 }) {
     const [dropdownmenu, setDropDownMenu]= useState(false)
     return (
@@ -36,24 +41,31 @@ export default function DropDownMenu({
 
                 <div className="absolute right-0 z-10 w-56 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg">
                     <div className="p-2">
-                        <a
-                            href="#"
+                        <Link 
+                        to={dropmenu1Link}
                             className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                         >
                             {dropdownmenu1}
-                        </a>
-                        <a
-                            href="#"
+                        </Link>
+                        <Link 
+                             to={dropmenu2Link}
+                            
                             className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                         >
                             {dropdownmenu2}
-                        </a>
-                        <a
-                            href="#"
+                        </Link>
+                        <Link 
+                            to={dropmenu3Link}
                             className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                         >
                             {dropdownmenu3}
-                        </a>
+                        </Link>
+                        <Link 
+                            to={dropmenu4Link}
+                            className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                        >
+                            {dropdownmenu4}
+                        </Link>
                     </div>
                 </div>
                 

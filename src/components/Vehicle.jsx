@@ -15,7 +15,7 @@ export default function Vehicle () {
 
 
   const [message, setMessage] =useState("");
-
+  const [isClicked, setClick] =useState(false);
  
 
 
@@ -43,11 +43,31 @@ export default function Vehicle () {
           <div>
         
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Add Vehicles To Your Collection</h2>
-            {message ? message : null}
           </div>
+          
           <form className="mt-8 space-y-6"  onSubmit={handleSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
+              
+
+           {message  ? 
+            <div className="flex items-center justify-between bg-green-200 p-6">
+              <div className="flex items-center">
+             {message}
+              </div>
+
+              <div className="text-sm">
+                <button onClick={()=>{
+                  setClick(true);
+                  setMessage("");
+                }}>X</button>
+              </div>
+            </div>
+             
+             :null
+           }
+
+
               <div>
                 <label  htmlFor="vehicle-name"  className="sr-only">
                   Vehicle Name
@@ -131,6 +151,8 @@ export default function Vehicle () {
           
             </div>
 
+
+
             <div>
               <button
                 type="submit"
@@ -149,6 +171,8 @@ export default function Vehicle () {
           </form>
         </div>
       </div>
+  
+
   
 
 </div>

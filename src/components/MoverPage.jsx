@@ -4,6 +4,8 @@ import NavBar from "./NavBar";
 import MoverDashboard from "./MoverDashboard";
 import Vehicle from "./Vehicle";
 import "./moverpage.css"
+import MoverSetting from "./MoverSetting";
+import MoverCustomers from "./MoverCustomers";
 
 export default function MoverPage () {
     const [mover,setMover] =useState({});
@@ -25,15 +27,23 @@ export default function MoverPage () {
     return (
         <>
         <NavBar
-         logoTitle={"Movers App"}
+         logoTitle={"Movers App - Dashboard"}
+         logoTitleLink={`/mover/${id}`}
          loginMenuItem={mover.company_name}
          
          dropdownmenu1={mover.email}
          dropdownmenu2={`Status: ${mover.is_available ? "Available" : "Not Available"}`}
+         dropdownmenu3={"add Vehicles"}
+         dropmenu3Link={"vehicle"}
+
+         dropdownmenu4={"Setting"}
+         dropmenu4Link={"settings"}
         />
     <Routes>
     <Route path="/" element={<MoverDashboard mover={mover}/>}/>
     <Route path="vehicle" element={<Vehicle/>} />
+    <Route path="settings" element={<MoverSetting/>} />
+    <Route path="customers" element={<MoverCustomers mover={mover}/>} />
     </Routes>
            
         

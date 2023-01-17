@@ -8,6 +8,7 @@ export default function HomePage(){
     <>
         <NavBar 
          logoTitle={"Movers App"}
+         logoTitleLink={"/"}
          rightMenuItem1={"Company"}
          rightMenuItem2={"Safety"}
          rightMenuItem3={"Help"}

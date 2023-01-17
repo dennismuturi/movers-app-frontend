@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function NavBar({
     logoTitle,
+    logoTitleLink,
     rightMenuItem1,
     rightMenuItem2,
     rightMenuItem3,
@@ -14,7 +15,12 @@ export default function NavBar({
     dropdownmenu1,
     dropdownmenu2,
     dropdownmenu3,
-    dropdownmenu4
+    dropdownmenu4,
+
+    dropmenu1Link,
+    dropmenu2Link,
+    dropmenu3Link,
+    dropmenu4Link
 })
 {
     return (
@@ -22,7 +28,7 @@ export default function NavBar({
 <div className="bg-black text-white">
 <div className="container mx-auto px-6 py-2 flex justify-between items-center">
     <div className="flex p-3 ">
-        <Link  to="/" data-baseweb="link"  
+        <Link  to={logoTitleLink} data-baseweb="link"  
         target="_self" 
         aria-label="Go to moversapp.com" 
         data-tracking-name=""
@@ -41,10 +47,15 @@ export default function NavBar({
             
             <DropDownMenu
             
+           
            dropdownmenu1={dropdownmenu1}
            dropdownmenu2= { dropdownmenu2}
            dropdownmenu3= {dropdownmenu3}
            dropdownmenu4 ={dropdownmenu4}
+           dropmenu1Link={dropmenu1Link}
+           dropmenu2Link={dropmenu2Link}
+           dropmenu3Link={dropmenu3Link}
+           dropmenu4Link={dropmenu4Link}
             />
             
             { signUpMenuItem  ? <button className="text-black bg-white rounded-lg py-1 px-2">{signUpMenuItem}</button> : null}
