@@ -7,8 +7,8 @@ const CustomerProfilePage = () => {
   return (
     <>
       <Navbar />
+      <Map />
       <RequestForm />
-      {/* <Map /> */}
     </>
   );
 };
