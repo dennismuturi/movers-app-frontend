@@ -48,7 +48,7 @@ console.log(errors)
   return(
     <div className='items-center pt-10 lg:w-full md  '>
         <h1 className='text-center lg:text-3xl text-indigo-600 '>Create an Account</h1>
-    <form className="border rounded mt-10 bg-white p-6 rounded-lg lg:w-1/4 md:w-1/2 sm:w-full m-auto" onSubmit={handleSubmit}>
+    <form className="border rounded mt-10 bg-gray-300 p-6 rounded-lg lg:w-1/4 md:w-1/2 sm:w-full m-auto" onSubmit={handleSubmit}>
       <label className="block font-medium text-center mb-2 text-sm mb-2">
         Username:
         <input
