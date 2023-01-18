@@ -1,15 +1,31 @@
 import React from "react";
 import "./styles/requestform.css";
+import Map from "./Map";
+import { Autocomplete, useJsApiLoader } from "@react-google-maps/api";
 
 const RequestForm = () => {
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.MOVERS_APP_GOOGLE_MAPS_API_KEY,
+    libraries: ["places"],
+  });
+
+  if (!isLoaded) {
+    return <h2>Loading...</h2>;
+  }
   return (
     <div className="form_container">
       <div className="tagline">
         <h2 className="header">Where can we relocate you from?</h2>
       </div>
       <form action="submit" className="request_form">
-        <input type="text" placeholder="Add a pickup location" />
-        <input type="text" placeholder="Enter your destination" />
+        <Autocomplete>
+          <input type="text" placeholder="Add a pickup location" />
+        </Autocomplete>
+
+        <Autocomplete>
+          <input type="text" placeholder="Enter your destination" />
+        </Autocomplete>
+
         <button type="submit" className="request_mover_btn">
           <i class="uil uil-truck truck_icon"></i> Request Mover
         </button>
