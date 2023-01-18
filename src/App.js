@@ -15,8 +15,7 @@ function App() {
   <Route path="/" element={<HomePage/>}/>
   <Route path="/signup" element={<SignupForm/>}/>
     <Route path="/login" element={<LoginForm/>}/>
-
-  <Route path="/mover/:id" element={<MoverPage/>}>
+    <Route path="/mover/:id" element={<MoverPage/>}>
     <Route path="vehicle" element={<Vehicle />}/>
     <Route path="settings" element={<MoverSetting/>} />
      <Route path="customers" element={<MoverCustomers />} />
