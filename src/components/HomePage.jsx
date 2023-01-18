@@ -3,10 +3,13 @@ import CustomerMarketing from "./CustomerMarketing";
 import MoversMarketing from "./MoversMarketing";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
-export default function HomePage(){
+export default function HomePage({customer, mover}){
     return (
     <>
         <NavBar 
+       
+         mover={mover}
+          customer={customer}
          logoTitle={"Movers App"}
          logoTitleLink={"/"}
          rightMenuItem1={"Company"}
