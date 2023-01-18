@@ -39,14 +39,14 @@ console.log(error)
   };
 
   return (
-    <div className='flex flex-row m-auto justify-center pt-10 h-screen bg-teal-300'>
-    <div className=''>
+    <div className=' lg:flex justify-center h-screen mt-20'>
+    {/* <div className=''>
        < img src="https://thumbs.dreamstime.com/b/movers-unloading-furniture-truck-young-male-cardboard-boxes-street-77511949.jpg" alt="mover"/>
-    </div>
-    <div className='items-center  '>
+    </div> */}
+    <div className="w-1/4">
         <h1 className='text-center lg:text-3xl text-indigo-600 '>Sign In</h1>
     <p className='text-center pt-6'>Or <Link className='text-indigo-600 text-sm' to="/signup">Register here</Link></p>
-    <form className="border rounded mt-10 bg-white p-6 rounded" onSubmit={handleSubmit}>
+    <form className="border w-full h-1/2 rounded-lg mt-10 bg-gray-300 p-6 rounded " onSubmit={handleSubmit}>
       <label className="block font-medium text-left mb-2 text-sm mb-2">
         Username:
         <input
