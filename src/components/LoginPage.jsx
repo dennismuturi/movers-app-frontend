@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
+import { Checkbox } from "@material-tailwind/react";
+
 function LoginForm() {
+  const[checkbox, setCheckbox]=useState(false);
 const navigate = useNavigate();
 const [error,setErrors]=useState([])
   const [formData, setFormData] = useState({
@@ -17,7 +20,30 @@ console.log(error)
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch('/customer_login',{
+    if(checkbox){
+         fetch('/mover_login',{
+        method: 'POST',
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(formData)
+    })
+    .then(r=>{
+        if(r.ok){
+            r.json().then((customer)=>{
+                console.log(customer)
+                navigate('/')
+
+            })
+        }
+        else{
+            r.json().then((error)=>{setErrors(error.error)
+            })
+        }
+    })
+
+    }
+    else{
+
+      fetch('/customer_login',{
         method: 'POST',
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(formData)
@@ -36,10 +62,12 @@ console.log(error)
         }
     })
     console.log(formData);
+    }
+    
   };
 
   return (
-    <div className=' lg:flex justify-center h-screen mt-20'>
+    <div className='flex justify-center m-auto h-screen mt-20'>
     {/* <div className=''>
        < img src="https://thumbs.dreamstime.com/b/movers-unloading-furniture-truck-young-male-cardboard-boxes-street-77511949.jpg" alt="mover"/>
     </div> */}
@@ -48,12 +76,12 @@ console.log(error)
     <p className='text-center pt-6'>Or <Link className='text-indigo-600 text-sm' to="/signup">Register here</Link></p>
     <form className="border w-full h-1/2 rounded-lg mt-10 bg-gray-300 p-6 rounded " onSubmit={handleSubmit}>
       <label className="block font-medium text-left mb-2 text-sm mb-2">
-        Username:
+        Email:
         <input
           className="border rounded-lg py-2 mt-3 px-3 w-full"
-          type="text"
-          name="username"
-          value={formData.username}
+          type="email"
+          name="email"
+          value={formData.email}
           onChange={handleChange}
         />
       </label>
@@ -70,9 +98,25 @@ console.log(error)
       </label>
      {error==="invalid email or password"? (<p className='text-center text-red-600 italic'>Invalid password or username</p>): null}
       <br />
-      <div className='lg:flex flex-row justify-center'>
+      <div className="flex items-center">
+              <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                    onChange={() => setCheckbox(true)}
+                    className="h-6 w-6   rounded border-gray-300 text-indigo-600 "
+                  />
+                <label
+                    htmlFor="remember-me"
+                    className="ml-2 block text-xl text-gray-900"
+                  >
+                    Mover? Tick here to login
+                  </label>
+            </div>
+      <div className='flex flex-row justify-center'>
       <button className="bg-indigo-500 text-white rounded-lg py-2 px-3" type="submit">Sign In</button>
       </div>
+  
     </form>
     </div>
     </div>

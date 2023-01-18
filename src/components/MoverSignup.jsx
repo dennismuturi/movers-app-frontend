@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-function SignupForm() {
+function MoverSignup() {
     const[errors, setErrors]=useState([])
     const nav=useNavigate()
+    console.log(errors)
   const [formData, setFormData] = useState({
-    name: '',
+    company_name: '',
     email: '',
     password: '',
     password_confirmation: ''
   });
-console.log(errors)
   const handleChange = event => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
     });
   };
-
-  const error=errors.join('').includes("Password confirmation doesn't match Password")
+//   const error=errors.join('').includes("Password confirmation doesn't match Password")
 
   const handleSubmit = event => {
     event.preventDefault();
     setErrors([])
-    fetch('/signup_customer',{
+    fetch('/signup_mover',{
         method:"POST",
         headers:{
             'Content-Type':'application/json'
@@ -32,32 +31,32 @@ console.log(errors)
     })
     .then(r=>{
         if(r.ok){
-            r.json().then(customer=>{
+            r.json().then(mover=>{
                 nav('/login')
-                console.log(customer)
+                console.log(mover)
             })
         }
         else{
-            r.json().then((err)=>setErrors(err.errors))
+            r.json().then((err)=>setErrors(err.error))
         }
     })
     
   };
+  const error=errors.join('')
+
 
   return(
     <div className='items-center pt-10 lg:w-full md  '>
-        <h1 className='text-center lg:text-3xl text-indigo-600 '>Create a Customer Account</h1>
-                <p className='text-center text-sm'>Or Login<Link className='text-indigo-600 pl-3' to="/login">here</Link></p>
-
-        <p className='text-center text-md'>Or Regiter as a Mover<Link className='text-indigo-600 pl-2' to="/signup/mover">here</Link></p>
+        <h1 className='text-center lg:text-3xl text-indigo-600 '>Create a Mover Account</h1>
+        <p className='text-center text-sm'>Or Login<Link className='text-indigo-600 pl-3' to="/login">here</Link></p>
     <form className="border rounded mt-10 bg-gray-300 p-6 rounded-lg lg:w-1/4 md:w-1/2 sm:w-full m-auto" onSubmit={handleSubmit}>
       <label className="block font-medium text-center mb-2 text-sm mb-2">
-        Username:
+        Company Name:
         <input
           className="border rounded-lg py-2 mt-3 px-3 w-full"
           type="text"
-          name="username"
-          value={formData.username}
+          name="company_name"
+          value={formData.company_name}
           onChange={handleChange}
         />
       </label>
@@ -69,17 +68,6 @@ console.log(errors)
           type="email"
           name="email"
           value={formData.email}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label className="block font-medium text-left mb-2 text-sm mb-2">
-        Name:
-        <input
-          className="border rounded-lg py-2 px-3 w-full"
-          type="text"
-          name="name"
-          value={formData.name}
           onChange={handleChange}
         />
       </label>
@@ -105,7 +93,7 @@ console.log(errors)
           onChange={handleChange}
         />
       </label>
-    {error?(<p className='text-red-600 text-center italic'>The password doesn't match, try again</p>):(null)}
+    {error.includes==="Password"?(<p className='text-red-600 text-center italic'>The password doesn't match or Too short, try again</p>):(null)}
       <br />
       <div className='lg:flex flex-row justify-center'>
       <button className="bg-indigo-500 text-white rounded-lg py-2 px-3" type="submit">Sign Up</button>
@@ -116,4 +104,4 @@ console.log(errors)
 
 }
 
-export default SignupForm;
+export default MoverSignup;
