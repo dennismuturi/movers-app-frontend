@@ -40,7 +40,7 @@ function App() {
     <Route path="mover" element={<MoverSignup/>}/>
   </Route>
     <Route path="/login" element={<LoginForm setCustomers={setCustomers} setMover={setMover}/>}/>
-    <Route path="/mover/:id" element={<MoverPage/>}>
+    <Route path="/mover" element={<MoverPage/>}>
     <Route path="vehicle" element={<Vehicle />}/>
     <Route path="settings" element={<MoverSetting/>} />
      <Route path="customers" element={<MoverCustomers />} />
