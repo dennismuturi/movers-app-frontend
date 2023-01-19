@@ -7,6 +7,7 @@ function classNames(...classes) {
 }
 
 export default function NavBar({
+  customer, mover,
     logoTitle,
     logoTitleLink,
     rightMenuItem1,
@@ -47,26 +48,7 @@ export default function NavBar({
 
         </div>
         <div className="flex p-3">
-            <Link to="/login">
-            <h1 className="mr-4 py-1 pr-10">{loginMenuItem}
-            </h1>
-            </Link>
-{/*             
-            <DropDownMenu
-            
-           
-           dropdownmenu1={dropdownmenu1}
-           dropdownmenu2= { dropdownmenu2}
-           dropdownmenu3= {dropdownmenu3}
-           dropdownmenu4 ={dropdownmenu4}
-           dropmenu1Link={dropmenu1Link}
-           dropmenu2Link={dropmenu2Link}
-           dropmenu3Link={dropmenu3Link}
-           dropmenu4Link={dropmenu4Link} */}
-        
-            
-            { signUpMenuItem  ? <Link to="/signup"><button className="text-black bg-white rounded-lg py-1 px-2">{signUpMenuItem}</button></Link>  : null}
-             <Menu as="div" className="relative ml-3">
+          {customer||mover? ( <Menu as="div" className="relative ml-3">
                     <div>
                       <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2 focus:ring-offset-teal-800">
                    
@@ -129,7 +111,28 @@ export default function NavBar({
                         </Menu.Item>
                       </Menu.Items>
                     </Transition>
-                  </Menu>
+                  </Menu>) : (<><Link to="/login">
+            <h1 className="mr-4 py-1 pr-10">{loginMenuItem}
+            </h1>
+            </Link>
+            <Link to="/signup"><button className="text-black bg-white rounded-lg py-1 px-2">{signUpMenuItem}</button></Link>
+            </>)}
+
+{/*             
+            <DropDownMenu
+            
+           
+           dropdownmenu1={dropdownmenu1}
+           dropdownmenu2= { dropdownmenu2}
+           dropdownmenu3= {dropdownmenu3}
+           dropdownmenu4 ={dropdownmenu4}
+           dropmenu1Link={dropmenu1Link}
+           dropmenu2Link={dropmenu2Link}
+           dropmenu3Link={dropmenu3Link}
+           dropmenu4Link={dropmenu4Link} */}
+        
+            
+            
             </div>
                    
             </div>
