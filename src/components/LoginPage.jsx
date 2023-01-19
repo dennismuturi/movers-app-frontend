@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
 // import { Checkbox } from "@material-tailwind/react";
 
-function LoginForm({setCustomers, setMover}) {
+ export default function LoginForm({setCustomers, setMover}) {
   const[checkbox, setCheckbox]=useState(false);
 const navigate = useNavigate();
 const [error,setErrors]=useState([])
@@ -11,7 +11,7 @@ const [error,setErrors]=useState([])
     password: '',
   });
 console.log(error)
-  const handleChange = event => {
+  // const handleChange = event => {
   const handleChange = event => {
     setFormData({
       ...formData,
@@ -124,7 +124,5 @@ console.log(error)
     </div>
     
     
-  );
-}
-
-export default LoginForm;
+  )
+  }
