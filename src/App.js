@@ -13,7 +13,7 @@ function App() {
   const[mover, setMover] = useState(null);
   const[customer, setCustomers] = useState(null);
   useEffect(()=>{
-    fetch('/auto_login_mover')
+    fetch('http://localhost:3000/auto_login_mover')
     .then(res=>res.json())
     .then(data=>{
       setMover(data);
@@ -24,7 +24,7 @@ function App() {
   console.log(customer);
 
   useEffect(()=>{
-    fetch('/auto_login_customer')  
+    fetch('http://localhost:3000/auto_login_customer')  
     .then(res=>res.json())
     .then(data=>{
       setCustomers(data);
