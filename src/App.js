@@ -7,6 +7,7 @@ import MoverSetting from "./components/MoverSetting";
 import MoverCustomers from "./components/MoverCustomers";
 import SignupForm from "./components/Signup";
 import LoginForm from "./components/LoginPage";
+import Checkout from "./components/CheckOut";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
   <Route path="/" element={<HomePage/>}/>
   <Route path="/signup" element={<SignupForm/>}/>
     <Route path="/login" element={<LoginForm/>}/>
+    <Route path="/checkout" element={<confirm_OrderForm/>}/>
 
   <Route path="/mover/:id" element={<MoverPage/>}>
     <Route path="vehicle" element={<Vehicle />}/>
