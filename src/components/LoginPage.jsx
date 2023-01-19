@@ -32,7 +32,7 @@ console.log(error)
             r.json().then((mover)=>{
                 setMover(mover)
                 console.log(mover)
-                navigate('/')
+                navigate('/mover')
 
             })
         }

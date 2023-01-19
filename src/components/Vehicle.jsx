@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 export default function Vehicle () {
+  const nav =useNavigate()
 
   let {id} = useParams()
+  console.log(id)
   const [vehicle, setVehicle] =useState({
 
     vehicle_name: "",
@@ -29,8 +31,12 @@ export default function Vehicle () {
         body: JSON.stringify(vehicle)
     };
     fetch(`http://localhost:3000/vehicles`, requestOptions)
-        .then(response => response.json())
-        .then(data => setMessage("Successfully added to Vehicle"));
+        .then(response => {response.json()})
+        .then(data => {
+          setMessage("Successfully added to Vehicle")
+        setTimeout(()=>{
+         nav('/mover')
+        },1000)});
       
       }
   
