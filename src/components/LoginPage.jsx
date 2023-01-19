@@ -10,6 +10,8 @@ const [error,setErrors]=useState([])
     username: '',
     password: '',
   });
+console.log(`formData`)
+console.log(formData)
 console.log(error)
   const handleChange = event => {
     setFormData({
@@ -21,7 +23,7 @@ console.log(error)
   const handleSubmit = event => {
     event.preventDefault();
     if(checkbox){
-         fetch('/mover_login',{
+         fetch('http://localhost:3000/mover/login',{
         method: 'POST',
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(formData)
@@ -43,7 +45,7 @@ console.log(error)
     }
     else{
 
-      fetch('/customer_login',{
+      fetch('http://localhost:3000/customer/login',{
         method: 'POST',
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(formData)
