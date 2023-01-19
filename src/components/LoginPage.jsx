@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom'
-import { Checkbox } from "@material-tailwind/react";
+// import { Checkbox } from "@material-tailwind/react";
 
-function LoginForm() {
+function LoginForm({setCustomers, setMover}) {
   const[checkbox, setCheckbox]=useState(false);
 const navigate = useNavigate();
 const [error,setErrors]=useState([])
@@ -13,6 +13,7 @@ const [error,setErrors]=useState([])
 console.log(`formData`)
 console.log(formData)
 console.log(error)
+  const handleChange = event => {
   const handleChange = event => {
     setFormData({
       ...formData,
@@ -30,8 +31,9 @@ console.log(error)
     })
     .then(r=>{
         if(r.ok){
-            r.json().then((customer)=>{
-                console.log(customer)
+            r.json().then((mover)=>{
+                setMover(mover)
+                console.log(mover)
                 navigate('/')
 
             })
@@ -41,7 +43,6 @@ console.log(error)
             })
         }
     })
-
     }
     else{
 
@@ -53,6 +54,7 @@ console.log(error)
     .then(r=>{
         if(r.ok){
             r.json().then((customer)=>{
+              setCustomers(customer)
                 console.log(customer)
                 navigate('/')
 
