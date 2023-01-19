@@ -30,7 +30,12 @@ export default function Header(){
   </p>
 </div>
 
-        </div>
+</div>
+{/* <Nav>
+  <Navdropdown title="User name" >
+    <Navdropdown.Item>Logout</Navdropdown.Item>
+    </Navdropdown>
+</Nav> */}
         
       </div>
     );
