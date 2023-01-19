@@ -12,6 +12,7 @@ const [error,setErrors]=useState([])
   });
 console.log(error)
   const handleChange = event => {
+  const handleChange = event => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
