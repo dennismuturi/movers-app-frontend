@@ -1,0 +1,22 @@
+.nav_profile {
+  position: absolute;
+  z-index: 9999;
+  width: 100vw;
+}
+
+.content_container {
+  display: flex;
+  position: relative;
+  width: auto;
+  flex-direction: column;
+}
+.map_profile {
+  position: fixed;
+  width: 100%;
+  /* height: 100vh; */
+  z-index: 3;
+}
+
+.request_form_profile {
+  z-index: 5;
+}

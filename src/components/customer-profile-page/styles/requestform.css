@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.form_container {
+  width: 90vw;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: auto;
+  border-radius: 15px;
+  margin-top: 84rem;
+  margin-bottom: 10rem;
+}
+
+div .tagline {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+}
+
+input {
+  margin-bottom: 2rem;
+  height: 4.7rem;
+  border-radius: 8px;
+  padding-left: 4rem;
+  background-color: rgb(238, 238, 238);
+  width: 100%;
+}
+
+.request_form button {
+  background: rgb(238, 238, 238);
+  height: 4rem;
+  width: 18rem;
+  font-weight: 400;
+  border-radius: 25px;
+  margin-bottom: 3rem;
+  /* border: solid 1px #000; */
+}
+
+.truck_icon {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background: rgb(238, 238, 238);
+  color: #000;
+}
+
+div .location_access {
+  display: block;
+}
+
+.location_access_content {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  align-items: center;
+  padding-left: 3rem;
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+}
+
+.location_access_content:hover,
+.set_location:hover {
+  cursor: pointer;
+  background: rgb(238, 238, 238);
+}
+
+.location_icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  margin-right: 0.7rem;
+}
+
+.heading {
+  font-weight: 500;
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+}
+
+.set_location {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  align-items: center;
+  padding-left: 3rem;
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+}
+
+/*==== Media Queries for desktop and larger devices =====*/
+@media only screen and (min-width: 768px) {
+  .form_container {
+    width: 30vw;
+    margin-left: 15rem;
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+  }
+}
