@@ -7,6 +7,7 @@ function classNames(...classes) {
 }
 
 export default function NavBar({
+  setMover, setCustomers,
   customer, mover,
     logoTitle,
     logoTitleLink,
@@ -29,6 +30,12 @@ export default function NavBar({
     dropmenu4Link
 })
 {
+  function handleLogout(){
+    if(mover){
+      fetch('/logout')
+    }
+  }
+
     return (
 <>
 <div className="bg-black text-white">
@@ -97,8 +104,8 @@ export default function NavBar({
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <Link
-                              to="#"
+                            <button
+                              onClick={handleLogout}
                               className={classNames(
                                 active ? 'bg-gradient-to-r from-teal-500 to-cyan-600' : '',
                                 'block px-4 py-2 text-sm text-gray-700'
@@ -106,7 +113,7 @@ export default function NavBar({
                              
                             >
                               sign out
-                            </Link>
+                            </button>
                           )}
                         </Menu.Item>
                       </Menu.Items>
