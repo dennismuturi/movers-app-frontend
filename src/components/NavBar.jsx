@@ -2,6 +2,8 @@ import DropDownMenu from "./DropDownMenu";
 import { Fragment } from "react";
 import {Transition, Menu } from "@headlessui/react";
 import { Link, } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "./context/UserContext";
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -27,7 +29,13 @@ export default function NavBar({
     dropmenu3Link,
     dropmenu4Link
 })
+
 {
+
+
+  let {customer,mover, setCustomer} = useContext(UserContext);
+  console.log(customer)
+  console.log(mover)
     return (
 <>
 <div className="bg-black text-white">
@@ -48,7 +56,8 @@ export default function NavBar({
         </div>
         <div className="flex p-3">
             <Link to="/login">
-            <h1 className="mr-4 py-1 pr-10">{loginMenuItem}
+            <h1 className="mr-4 py-1 pr-10">
+              {loginMenuItem}
             </h1>
             </Link>
 {/*             
@@ -66,6 +75,8 @@ export default function NavBar({
         
             
             { signUpMenuItem  ? <Link to="/signup"><button className="text-black bg-white rounded-lg py-1 px-2">{signUpMenuItem}</button></Link>  : null}
+             
+             { customer.email || mover.email ?
              <Menu as="div" className="relative ml-3">
                     <div>
                       <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2 focus:ring-offset-teal-800">
@@ -96,7 +107,7 @@ export default function NavBar({
                                 'block px-4 py-2 text-sm text-gray-700'
                               )}
                             >
-                              Your Profile
+                              {customer.name ?  `${customer.name} : Profile` : "Your Profile"}
                             </Link>
                           )}
                         </Menu.Item>
@@ -123,13 +134,32 @@ export default function NavBar({
                               )}
                              
                             >
+                              <button onClick={() =>{
+                                 fetch(`http://localhost:3000/customerlogout/${customer.id}`,{
+                                  method: 'DELETE',
+                                  headers:{"Content-Type": "application/json"},
+                                }).then((res)=>res.json())
+                                .then((data)=>{
+                                  setCustomer({
+                                    id: '',
+                                    name: '',
+                                    email:'',
+                                    password: '',
+                                    phone_number: ''
+                                
+                                  })
+                                  console.log(data)
+                                })
+                              }}>
                               sign out
+                              </button>
                             </Link>
                           )}
                         </Menu.Item>
                       </Menu.Items>
                     </Transition>
                   </Menu>
+                  : null}
             </div>
                    
             </div>
