@@ -1,4 +1,4 @@
-export function CustomerMarketing (){
+export default function CustomerMarketing (){
     return (
         <>
         <section className="container mx-auto px-6 p-10">

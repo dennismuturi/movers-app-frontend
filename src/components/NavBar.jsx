@@ -2,14 +2,11 @@ import DropDownMenu from "./DropDownMenu";
 import { Fragment } from "react";
 import {Transition, Menu } from "@headlessui/react";
 import { Link, } from "react-router-dom";
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function NavBar({
   setMover, setCustomers,
   customer, mover,
-    logoTitle,
+  logoTitle,
     logoTitleLink,
     rightMenuItem1,
     rightMenuItem2,
@@ -23,16 +20,35 @@ export default function NavBar({
     dropdownmenu2,
     dropdownmenu3,
     dropdownmenu4,
-
+    
     dropmenu1Link,
     dropmenu2Link,
     dropmenu3Link,
     dropmenu4Link
-})
-{
+  })
+  {
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
   function handleLogout(){
     if(mover){
-      fetch('/logout')
+      fetch('/movers_logout',{
+        method:'DELETE',
+
+      }).then((r)=>{
+        if(r.ok){
+          setMover(null)
+        }
+      })
+    }else{
+      fetch('/logout',{
+        method:'DELETE',
+
+      }).then((r)=>{
+        if(r.ok){
+          setCustomers(null)
+        }
+      })
     }
   }
 
