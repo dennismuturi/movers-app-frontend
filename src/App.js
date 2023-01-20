@@ -34,7 +34,7 @@ function App() {
   return (
     <>
   <Routes>
-  <Route path="/" element={<HomePage customer={customer} mover={mover}/>}/>
+  <Route path="/" element={<HomePage customer={customer} mover={mover} setCustomers={setCustomers} setMover={setMover}/>}/>
   <Route path="/signup" element={<SignupForm/>}/>
   <Route path="signup">
     <Route path="mover" element={<MoverSignup/>}/>
