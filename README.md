@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Phase 4 Final Project : Muziki App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Focus 🎯
+Building a Movers App that uses react for user interfaces and Ruby on Rails for backend API creation
 
-## Available Scripts
+## Learning Goals 👨‍🚀
+- Build a separate React frontend application that interacts with the API to perform CRUD actions.
+- Build a backend API using Ruby on Rails that allows for CRUD operation
 
-In the project directory, you can run:
+## Frontend Setup ✴️
+- [x] cd into movers-app-frontend back-end folder and run `npm install  --legacy-peer-deps` from your terminal which will install all the dependecies
+- [x] Finally run `npm start` to keep your backend running on `http://127.0.0.1:4000` :boom:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## DEMO
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://movers-app-frontend.vercel.app/
 
-### `npm test`
+## Backend Repo ✴️
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://github.com/dennismuturi/movers-app-backend
 
-### `npm run build`
+## Core Deliverables 📈
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As a User 👨‍💻, I can:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-  Create an account and Sign in  to the Movers Platform
+-  Request a Mover 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As a Mover 👨‍💻, I can:
 
-### `npm run eject`
+-  Create an account and Sign in to the Movers Platform as a Mover
+-  Add vehicles to my dashboard
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Authors 🖊️
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project was contributed to by:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [Denis Muturi](https://github.com/dennismuturi) (Scum Master)Front/Backend Developer
+- [Frncis Maina](https://github.com/Maina-Francis) Front/Backend Developer
+- [Maurene Chepkemoi](https://github.com/ChepkemoiMaurene) Frontend/Backend Developer
+- [Lewis Munyambu](https://github.com/lewiih001) Frontend/Backend Developer
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License 📄
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is licensed under MIT
