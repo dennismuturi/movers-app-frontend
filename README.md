@@ -1,4 +1,4 @@
-# Phase 4 Final Project : Muziki App
+# Phase 5 Final Project : Movers App
 
 ## Focus 🎯
 Building a Movers App that uses react for user interfaces and Ruby on Rails for backend API creation
